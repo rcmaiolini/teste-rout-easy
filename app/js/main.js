@@ -11,6 +11,7 @@ import onRun     from './on_run';
 
 import 'angular-ui-router';
 import 'angular-ui-bootstrap';
+import 'angular-resource';
 import './templates';
 import './filters';
 import './controllers';
@@ -20,6 +21,7 @@ import './directives';
 // create and bootstrap application
 const requires = [
   'ui.router',
+  'ui.bootstrap',
   'ngResource',
   'templates',
   'app.filters',
