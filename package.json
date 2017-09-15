@@ -32,7 +32,11 @@
     "unit": "cross-env NODE_ENV=test ./node_modules/.bin/gulp unit"
   },
   "dependencies": {
-    "cross-env": "^3.1.1"
+    "angular-resource": "^1.6.6",
+    "bootstrap-sass": "^3.3.7",
+    "cross-env": "^3.1.1",
+    "istanbul": "^0.3.22",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "angular": "^1.5.0",

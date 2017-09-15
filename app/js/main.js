@@ -1,10 +1,16 @@
 import angular from 'angular';
 
+window.$ = window.jQuery = require('../../node_modules/jquery/dist/jquery.js');
+let Bootstrap = require('../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js');
+Bootstrap.$ = $;
+
 // angular modules
 import constants from './constants';
 import onConfig  from './on_config';
 import onRun     from './on_run';
+
 import 'angular-ui-router';
+import 'angular-ui-bootstrap';
 import './templates';
 import './filters';
 import './controllers';
@@ -14,6 +20,7 @@ import './directives';
 // create and bootstrap application
 const requires = [
   'ui.router',
+  'ngResource',
   'templates',
   'app.filters',
   'app.controllers',
