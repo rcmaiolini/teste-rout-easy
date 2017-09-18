@@ -1,0 +1,32 @@
+<form class="input-group" ng-submit="findUser.getUser(user)">
+  <input type="text" placeholder="Search an User" class="form-control" ng-model="user" ng-init="user ='josh'">
+  <span class="input-group-btn">
+    <button type="submit" class="btn btn-success">Search</button>
+  </span>
+</form>
+
+<hr ng-if="findUser.user.name">
+
+<div class="panel panel-success" ng-show="findUser.user.name">
+  <div class="panel-heading">{{findUser.user.name}} <span class="pull-right">{{findUser.user.location}}</span></div>
+  <div class="panel-body">
+
+    <img src="{{findUser.user.avatar_url}}" width="200" class="img-responsive img-thumbnail" alt="{{findUser.user.name}}">
+    
+     <div>
+      <h2 class="media-heading">{{findUser.user.login}} - <a href="{{findUser.user.html_url}}">{{findUser.user.html_url}}</a></h2>
+      
+      <p>
+        Repositories <span class="label label-success">{{findUser.user.public_repos}}</span>
+        <a href="">View all Repos</a>
+      </p>
+      <p>Followers <span class="label label-success">{{findUser.user.followers}}</span></p>
+      <p>Following <span class="label label-success">{{findUser.user.following}}</span></p>
+      <p>Email: {{findUser.user.email}}</p>
+      <p>Blog: {{findUser.user.blog}}</p>
+      <p>Bio: {{findUser.user.bio}}</p>
+    </div>
+    
+     
+  </div>
+</div>

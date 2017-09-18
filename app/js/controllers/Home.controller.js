@@ -1,10 +1,9 @@
 class HomeController {
-  constructor () {
+  constructor (AppSettings) {
     'ngInject';
 
-    this.title = 'Home';
+    this.title = AppSettings.appTitle;
   }
-
 }
 
 export default {

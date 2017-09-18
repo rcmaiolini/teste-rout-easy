@@ -1,6 +1,6 @@
 const AppSettings = {
-  appTitle: 'GitHub Users',
-  apiUrl: 'https://developer.github.com/v3/'
+  appTitle: 'GitHub Users Search',
+  apiUrl: 'https://api.github.com/'
 };
 
 export default AppSettings;

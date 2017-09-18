@@ -11,14 +11,20 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
   });
 
   $stateProvider
-  .state('Home', {
-    url: '/',
-    controller: 'HomeController as home',
-    templateUrl: 'home.html',
-    title: 'Home'
-  });
+    .state('home', {
+      abstract: true,
+      url: '/',
+      templateUrl: 'home.html',
+      controller: 'HomeController as home'
+    })
+    .state('home.user', {
+      url: 'user',
+      templateUrl: 'pages/user.html',
+      controller: 'FindUserController as findUser'
+    }
+  );
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/user');
 
 }
 
