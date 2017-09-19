@@ -1,22 +1,25 @@
 class FindUserController {
-  constructor (UserService) {
+  constructor (UserService, $location) {
     'ngInject';
 
     this.UserService = UserService;
+    this.$location = $location;
   }
   
   getUser(user) {
     var vm = this;
-    vm.user = null;
     this.UserService.getUser().get({user: user}).$promise.then(
       function(res){
         vm.user = res;
-        console.log(vm.user)
       },
       function(err){
-        console.log('User not found')
+        vm.message = `User ${err.data.message}`;
       }
     )
+  }
+  
+  setUserUrl(user) {
+    this.$location.path('user-repos/' + user + '/repos');
   }
 
 }

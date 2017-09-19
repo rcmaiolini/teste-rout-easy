@@ -5,10 +5,10 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     $compileProvider.debugInfoEnabled(false);
   }
 
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+//  $locationProvider.html5Mode({
+//    enabled: true,
+//    requireBase: false
+//  });
 
   $stateProvider
     .state('home', {
@@ -21,8 +21,12 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
       url: 'user',
       templateUrl: 'pages/user.html',
       controller: 'FindUserController as findUser'
-    }
-  );
+    })
+    .state('home.userRepos', {
+      url: 'user-repos/:user/repos',
+      templateUrl: 'pages/user-repos.html',
+      controller: 'UserReposController as userRepos'
+    });
 
   $urlRouterProvider.otherwise('/user');
 

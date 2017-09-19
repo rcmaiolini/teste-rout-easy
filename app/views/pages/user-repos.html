@@ -1,0 +1,24 @@
+<h1>{{userRepos.user}} repositories</h1>
+
+ <table class="table table-condensed"> 
+  <thead> 
+    <tr> 
+      <th ng-click="reverse = !reverse">Stars <span class="glyphicon pull-right" ng-class="userRepos.reverse ? (reverse ? 'glyphicon-sort-by-attributes-alt' : 'glyphicon-sort-by-attributes') : 'glyphicon-sort' "></span></th> 
+      <th>Repositorie Name</th> 
+      <th>Forks</th> 
+      <th>Language</th>
+      <th>Link</th> 
+    </tr> 
+  </thead> 
+  <tbody> 
+    <tr ng-repeat="repo in userRepos.repos | orderBy: 'stargazers_count*1' : reverse"> 
+      <th>{{repo.stargazers_count}}</th>  
+      <td>{{repo.name}}</td> 
+      <td>{{repo.forks}}</td> 
+      <td>{{repo.language}}</td> 
+      <td><a href="{{repo.html_url}}" target="_blank">View Repo</a></td>
+    </tr> 
+  </tbody> 
+</table>
+
+

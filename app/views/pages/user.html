@@ -1,32 +1,31 @@
 <form class="input-group" ng-submit="findUser.getUser(user)">
-  <input type="text" placeholder="Search an User" class="form-control" ng-model="user" ng-init="user ='josh'">
+  <input type="text" placeholder="Search an User" class="form-control" ng-model="user">
   <span class="input-group-btn">
     <button type="submit" class="btn btn-success">Search</button>
   </span>
 </form>
 
-<hr ng-if="findUser.user.name">
-
-<div class="panel panel-success" ng-show="findUser.user.name">
+<hr>
+<div class="panel panel-success" ng-show="findUser.user.login">
   <div class="panel-heading">{{findUser.user.name}} <span class="pull-right">{{findUser.user.location}}</span></div>
   <div class="panel-body">
 
     <img src="{{findUser.user.avatar_url}}" width="200" class="img-responsive img-thumbnail" alt="{{findUser.user.name}}">
-    
+
      <div>
-      <h2 class="media-heading">{{findUser.user.login}} - <a href="{{findUser.user.html_url}}">{{findUser.user.html_url}}</a></h2>
-      
+      <h3 class="media-heading">{{findUser.user.login}} - <a href="{{findUser.user.html_url}}">{{findUser.user.html_url}}</a></h3>
+
       <p>
-        Repositories <span class="label label-success">{{findUser.user.public_repos}}</span>
-        <a href="">View all Repos</a>
+        <b>Repositories:</b> <span class="label label-success">{{findUser.user.public_repos}}</span>
+        <a ng-click="findUser.setUserUrl(findUser.user.login)" class="btn btn-link">View all</a>
       </p>
-      <p>Followers <span class="label label-success">{{findUser.user.followers}}</span></p>
-      <p>Following <span class="label label-success">{{findUser.user.following}}</span></p>
-      <p>Email: {{findUser.user.email}}</p>
-      <p>Blog: {{findUser.user.blog}}</p>
-      <p>Bio: {{findUser.user.bio}}</p>
+      <p><b>Followers:</b> <span class="label label-success">{{findUser.user.followers}}</span></p>
+      <p><b>Following:</b> <span class="label label-success">{{findUser.user.following}}</span></p>
+      <p><b>Email:</b> <a href="mailto:{{findUser.user.email}}">{{findUser.user.email}}</a></p>
+      <p><b>Blog:</b> <a href="{{findUser.user.blog}}">{{findUser.user.blog}}</a></p>
+      <p><b>Bio:</b> {{findUser.user.bio}}</p>
     </div>
-    
-     
+
   </div>
+
 </div>
